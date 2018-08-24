@@ -13,7 +13,7 @@ pipeline {
     stage("Build") {
       steps {
         // Builds the actual docker image
-          //sh 'printenv'
+          sh 'printenv'
 
           echo GIT_COMMIT
           sh """
@@ -23,9 +23,14 @@ pipeline {
             
             echo \$FILES
             
-            for f in \$FILES; do
-              echo \$f
-            done
+            if [ ! -z "$FILES" ]
+
+              for f in \$FILES; do
+                echo \$f
+              done
+            fi
+
+            echo "Finished"
 
             """
       } // steps
