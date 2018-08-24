@@ -21,7 +21,7 @@ pipeline {
             #set +e
 
             # Files to build
-            FILES=\$(git diff --name-only ${GIT_PREVIOUS_COMMIT} ${GIT_COMMIT} | grep Dockerfile )
+            FILES=\$(git diff --name-only ${GIT_PREVIOUS_COMMIT} ${GIT_COMMIT} | grep Dockerfile --color=never)
             
             echo \$FILES
             
