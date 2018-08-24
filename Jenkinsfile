@@ -23,7 +23,7 @@ pipeline {
             
             echo \$FILES
             
-            if [ ! -z "$FILES" ]
+            if [ ! -z \$FILES ]
 
               for f in \$FILES; do
                 echo \$f
