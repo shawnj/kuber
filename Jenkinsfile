@@ -13,7 +13,7 @@ pipeline {
     stage("Build") {
       steps {
         // Builds the actual docker image
-          sh """
+          sh """#!/bin/sh
             #set +e
 
             # Files to build
