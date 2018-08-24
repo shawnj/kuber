@@ -14,7 +14,6 @@ pipeline {
       steps {
         // Builds the actual docker image
           //sh 'printenv'
-          echo "${SCMVARS}"
 
           echo GIT_COMMIT
           sh """
