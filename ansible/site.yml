@@ -1,0 +1,11 @@
+---
+- name: Pre-Rke
+  hosts: coreos
+  remote_user: coreos
+  gather_facts: False
+  roles:
+    - defunctzombie.coreos-bootstrap
+  tasks:
+    - include: deploy.yml
+
+# Install role  -- ansible-galaxy install defunctzombie.coreos-bootstrap -p ./roles

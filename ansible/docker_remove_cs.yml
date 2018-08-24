@@ -1,0 +1,7 @@
+---
+
+- name: Remove All Containers
+  shell: "docker rm $(docker ps -a -q) -f"
+
+- debug: 
+    msg: "Complete"

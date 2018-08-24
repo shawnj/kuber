@@ -1,0 +1,124 @@
+# If you intened to deploy Kubernetes in an air-gapped environment,
+# please consult the documentation on how to configure custom RKE images.
+nodes:
+- address: vm1dns.westus.cloudapp.azure.com
+  role:
+  - controlplane
+  - etcd
+  hostname_override: VM1
+  user: ladmin
+- address: vm2dns.westus.cloudapp.azure.com
+  role:
+  - controlplane
+  - etcd
+  hostname_override: VM2
+  user: ladmin
+- address: vm3dns.westus.cloudapp.azure.com
+  role:
+  - controlplane
+  - etcd
+  hostname_override: VM3
+  user: ladmin
+- address: vm4dns.westus.cloudapp.azure.com
+  role:
+  - worker
+  hostname_override: VM4
+  user: ladmin
+services:
+  etcd:
+    snapshot: true # enables recurring etcd snapshots
+    creation: 1h0s # time increment between snapshots
+    retention: 24h # time increment before snapshot purge
+  kube-api:
+    #image: rancher/hyperkube:v1.10.1-rancher2
+    extra_args: {}
+    extra_binds: []
+    service_cluster_ip_range: 10.43.0.0/16
+    pod_security_policy: false
+  kube-controller:
+    #image: rancher/hyperkube:v1.10.1-rancher2
+    extra_args: {}
+    extra_binds: []
+    cluster_cidr: 10.42.0.0/16
+    service_cluster_ip_range: 10.43.0.0/16
+  scheduler:
+  kubelet:
+    #image: rancher/hyperkube:v1.10.1-rancher2
+    extra_args: {}
+    extra_binds: []
+    cluster_domain: cluster.local
+    infra_container_image: rancher/pause-amd64:3.1
+    cluster_dns_server: 10.43.0.10
+    fail_swap_on: false
+  kubeproxy:
+network:
+  plugin: canal
+  options: {}
+authentication:
+  strategy: x509
+  options: {}
+  sans: []
+addons: ""
+addons_include: []
+system_images:
+  etcd: ""
+  alpine: ""
+  nginx_proxy: ""
+  cert_downloader: ""
+  kubernetes_services_sidecar: ""
+  kubedns: ""
+  dnsmasq: ""
+  kubedns_sidecar: ""
+  kubedns_autoscaler: ""
+  kubernetes: rancher/hyperkube:v1.10.3-rancher2
+  flannel: ""
+  flannel_cni: ""
+  calico_node: ""
+  calico_cni: ""
+  calico_controllers: ""
+  calico_ctl: ""
+  canal_node: ""
+  canal_cni: ""
+  canal_flannel: ""
+  wave_node: ""
+  weave_cni: ""
+  pod_infra_container: ""
+  ingress: ""
+  ingress_backend: ""
+ssh_key_path: ~/.ssh/id_rsa
+ssh_agent_auth: false
+authorization:
+  mode: rbac
+  options: {}
+ignore_docker_version: true
+kubernetes_version: ""
+private_registries: []
+ingress:
+  provider: ""
+  options: {}
+  node_selector: {}
+  extra_args: {}
+cluster_name: "testcore"
+cloud_provider:
+  name: azure
+  azureCloudProvider:
+    aadClientId: x
+    aadClientSecret: x
+    aadTenantId: x
+    subscriptionId: x
+    tenantId: x
+    cloud: AzurePublicCloud
+    location: westus
+    primaryAvailabilitySetName: acceptanceTestAvailabilitySet1
+    resourceGroup: TestCore
+    subnetName: tcsubnet
+    vnetName: vnet
+    vnetResourceGroup: TestCore
+prefix_path: ""
+addon_job_timeout: 0
+bastion_host:
+  address: ""
+  port: ""
+  user: ""
+  ssh_key: ""
+  ssh_key_path: ""

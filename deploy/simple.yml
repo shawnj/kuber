@@ -1,0 +1,59 @@
+apiVersion: v1
+kind: Namespace
+metadata: 
+  name: simple-ns
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: simple-deployment
+  namespace: simple
+  labels:
+    k8s-app: simple
+spec:
+  selector:
+    matchLabels:
+      k8s-app: simple
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        k8s-app: simple
+    spec:
+      containers:
+        - name: nginx
+          image: quay.io/coreos/example-app:v2.0
+          ports:
+            - name: http
+              containerPort: 80
+          volumeMounts:
+          - name: azurefile
+            mountPath: /testshare
+      volumes:
+        - name: azurefile
+          persistentVolumeClaim:
+            claimName: azurefile
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: simple-service
+  namespace: simple
+spec:
+  type: NodePort
+  selector:
+    k8s-app: simple
+  ports:
+  - port: 80
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: simple-ingress
+  namespace: simple
+spec:
+  backend:
+    serviceName: simple-service
+    servicePort: 80

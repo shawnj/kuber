@@ -1,0 +1,13 @@
+---
+
+- name: Set Enforce
+  command: sudo setenforce 0
+
+- name: Set UserMod
+  command: sudo usermod -aG docker,ladmin ladmin
+
+- name: Set SwapOff
+  command: sudo swapoff -a
+
+- debug: 
+    msg: "Complete"

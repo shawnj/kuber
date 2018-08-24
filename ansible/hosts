@@ -1,0 +1,9 @@
+[coreos]
+vm1dns.westus.cloudapp.azure.com ansible_ssh_port=22 ansible_ssh_user=coreos
+vm2dns.westus.cloudapp.azure.com ansible_ssh_port=22 ansible_ssh_user=coreos
+vm3dns.westus.cloudapp.azure.com ansible_ssh_port=22 ansible_ssh_user=coreos
+vm4dns.westus.cloudapp.azure.com ansible_ssh_port=22 ansible_ssh_user=coreos
+
+[coreos:vars]
+ansible_ssh_user=coreos
+ansible_python_interpreter="/home/coreos/bin/python"

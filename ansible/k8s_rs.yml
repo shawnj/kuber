@@ -1,0 +1,13 @@
+---
+
+- name: Restart Kubelets
+  command: docker restart kube-apiserver kubelet kube-controller-manager kube-scheduler kube-proxy
+
+- name: Restart Networking
+  shell: "docker ps | grep flannel | cut -f 1 -d \" \" | xargs docker restart"
+
+- name: Restart calico
+  shell: "docker ps | grep calico | cut -f 1 -d \" \" | xargs docker restart"
+
+- debug: 
+    msg: "Complete"
