@@ -26,8 +26,7 @@ pipeline {
                 echo \$f
               done
             else
-              currentBuild.result = 'ABORTED'
-              #error('Stopping early…')
+              exit 1
             fi
 
             echo "Finished"
