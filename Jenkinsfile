@@ -30,7 +30,8 @@ pipeline {
                 echo \$f
               done
             else
-              echo "No Dockerfile."
+              currentBuild.result = 'ABORTED'
+              error('Stopping early…')
             fi
 
             echo "Finished"
