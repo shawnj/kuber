@@ -30,7 +30,7 @@ pipeline {
                 echo \$f
               done
             else
-              echo "No files."
+              echo "No Dockerfile."
             fi
 
             echo "Finished"
