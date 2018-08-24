@@ -27,7 +27,7 @@ pipeline {
               done
             else
               echo "Build Fail"
-              exit 1
+              exit $?
             fi
 
             echo "Finished"
