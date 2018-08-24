@@ -25,8 +25,8 @@ pipeline {
               for f in \$FILES; do
                 echo \$f
               done
-            else
-              exit 1
+            #else
+              #exit 1
             fi
 
             echo "Finished"
