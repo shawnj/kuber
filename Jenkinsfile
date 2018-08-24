@@ -29,6 +29,8 @@ pipeline {
               for f in \$FILES; do
                 echo \$f
               done
+            else
+              echo "No files."
             fi
 
             echo "Finished"
