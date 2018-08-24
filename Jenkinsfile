@@ -19,13 +19,13 @@ pipeline {
 
           sh """
             set +e
-            
+
             # Files to build
             FILES=\$(git diff --name-only ${GIT_PREVIOUS_COMMIT} ${GIT_COMMIT} | grep Dockerfile )
             
             echo \$FILES
             
-            if [ ! -z \$FILES ]
+            if [ ! -z \$FILES ]; then
               for f in \$FILES; do
                 echo \$f
               done
