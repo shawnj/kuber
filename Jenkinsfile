@@ -13,10 +13,6 @@ pipeline {
     stage("Build") {
       steps {
         // Builds the actual docker image
-          sh 'printenv'
-
-          echo GIT_COMMIT
-
           sh """#!/bin/sh
             #set +e
 
@@ -31,7 +27,7 @@ pipeline {
               done
             else
               currentBuild.result = 'ABORTED'
-              error('Stopping early…')
+              #error('Stopping early…')
             fi
 
             echo "Finished"
@@ -39,5 +35,10 @@ pipeline {
             """
       } // steps
     } // stage("Build")
+    stage("Next Build"){
+      steps{
+        echo "building..."
+      }
+    }
     } // stages
 } //pipeline
