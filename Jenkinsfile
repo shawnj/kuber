@@ -16,15 +16,16 @@ pipeline {
           sh 'printenv'
 
           echo GIT_COMMIT
-          sh """
 
+          sh """
+            set +e
+            
             # Files to build
             FILES=\$(git diff --name-only ${GIT_PREVIOUS_COMMIT} ${GIT_COMMIT} | grep Dockerfile )
             
             echo \$FILES
             
             if [ ! -z \$FILES ]
-
               for f in \$FILES; do
                 echo \$f
               done
