@@ -19,7 +19,7 @@ pipeline {
           script{
             println(SCMVARS.getClass())
             SCMVARS.each{ item-> 
-              println (item.getClass())
+              //println (item.getClass())
               //if (item.contains(value)){
               //	path = itemValue
               //}
