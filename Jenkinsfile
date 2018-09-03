@@ -10,7 +10,7 @@ pipeline {
       //GIT_PREVIOUS_COMMIT= "${checkout(scm).GIT_PREVIOUS_COMMIT}"
       SCMVARS = checkout scm
       GIT_COMMIT="Hello"
-      GIT_PREVIOUS_COMMIT=""
+      GIT_PREVIOUS_COMMIT="Test"
   }
   stages {
     stage("Build") {
