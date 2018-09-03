@@ -21,10 +21,10 @@ pipeline {
               if (item.contains("GIT_COMMIT")){
                 GIT_COMMIT = itemValue
               }
-              if (item.contains("GIT_COMMIT")){
-                GITu[_COMMIT = itemValue
+              if (item.contains("GIT_PREVIOUS_COMMIT")){
+                GIT_PREVIOUS_COMMIT = itemValue
               }
-            }
+            
           }
           sh """#!/bin/sh
             set +e
