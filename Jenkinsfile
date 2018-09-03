@@ -9,7 +9,7 @@ pipeline {
       //GIT_COMMIT="${checkout(scm).GIT_COMMIT}"
       //GIT_PREVIOUS_COMMIT= "${checkout(scm).GIT_PREVIOUS_COMMIT}"
       SCMVARS = checkout scm
-      GIT_COMMIT=""
+      GIT_COMMIT="Hello"
       GIT_PREVIOUS_COMMIT=""
   }
   stages {
@@ -19,10 +19,12 @@ pipeline {
           script{
              SCMVARS.each{ item, itemValue -> 
               if (item.contains("GIT_COMMIT")){
-                GIT_COMMIT = itemValue
+                //GIT_COMMIT = itemValue
+                println(itemValue)
               }
               if (item.contains("GIT_PREVIOUS_COMMIT")){
-                GIT_PREVIOUS_COMMIT = itemValue
+                //GIT_PREVIOUS_COMMIT = itemValue
+                println (itemValue)
               }
              }
           }
