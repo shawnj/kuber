@@ -19,6 +19,7 @@ pipeline {
           script{
             println(SCMVARS)
              SCMVARS.each{ item, itemValue -> 
+             println(item)
               if (item.contains("GIT_COMMIT")){
                 //GIT_COMMIT = itemValue
                 println(itemValue)
