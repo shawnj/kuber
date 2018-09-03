@@ -18,6 +18,7 @@ pipeline {
         // Builds the actual docker image
           script{
             println(SCMVARS.getClass())
+            println(SCMVARS)
             SCMVARS.each{ item-> 
               //println (item.getClass())
               //if (item.contains(value)){
