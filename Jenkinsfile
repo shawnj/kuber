@@ -17,6 +17,7 @@ pipeline {
       steps {
         // Builds the actual docker image
           script{
+            println(SCMVARS)
              SCMVARS.each{ item, itemValue -> 
               if (item.contains("GIT_COMMIT")){
                 //GIT_COMMIT = itemValue
