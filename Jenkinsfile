@@ -18,8 +18,14 @@ pipeline {
         // Builds the actual docker image
           script{
             println(SCMVARS)
+            SCMVARS.each{ item-> 
+              println (item.getClass())
+              //if (item.contains(value)){
+              //	path = itemValue
+              //}
+            }
              SCMVARS.each{ item, itemValue -> 
-             println(item)
+             //println(item)
               if (item.contains("GIT_COMMIT")){
                 //GIT_COMMIT = itemValue
                 println(itemValue)
