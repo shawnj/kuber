@@ -24,7 +24,7 @@ pipeline {
               if (item.contains("GIT_PREVIOUS_COMMIT")){
                 GIT_PREVIOUS_COMMIT = itemValue
               }
-            
+             }
           }
           sh """#!/bin/sh
             set +e
