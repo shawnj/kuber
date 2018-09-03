@@ -22,7 +22,7 @@ pipeline {
                 GIT_COMMIT = itemValue
               }
               if (item.contains("GIT_COMMIT")){
-                GIT_COMMIT = itemValue
+                GITu[_COMMIT = itemValue
               }
             }
           }
