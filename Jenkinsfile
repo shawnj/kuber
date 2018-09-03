@@ -18,11 +18,11 @@ pipeline {
         // Builds the actual docker image
           script{
              SCMVARS.each{ item, itemValue -> 
-              if (item.contains("GIT_PREVIOUS_COMMIT")){
+              if (item.contains("GIT_COMMIT")){
                 GIT_COMMIT = itemValue
               }
               if (item.contains("GIT_COMMIT")){
-                GIT_PREVIOUS_COMMIT = itemValue
+                GIT_COMMIT = itemValue
               }
             }
           }
