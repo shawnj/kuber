@@ -44,7 +44,7 @@ pipeline {
             FILES=\$(git diff --name-only ${GIT_PREVIOUS_COMMIT} ${GIT_COMMIT} | grep Dockerfile)
             
             echo \$FILES
-            
+           
             if [ ! -z \$FILES ]; then
               for f in \$FILES; do
                 echo \$f
@@ -58,7 +58,7 @@ pipeline {
 
             """
       } // steps
-    } // stageasdfkjwfij("Build")
+    } // stageasdfkjwf("Build")
     stage("Next Build"){
       steps{
         echo "building..."
