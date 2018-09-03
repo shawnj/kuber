@@ -26,8 +26,8 @@ pipeline {
               }
              }
           }
-          sh """#!/bin/sh
-            set +e
+          sh """
+            #set +e
 
             # Files to build
             FILES=\$(git diff --name-only ${GIT_PREVIOUS_COMMIT} ${GIT_COMMIT} | grep Dockerfile)
