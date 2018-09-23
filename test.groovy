@@ -6,7 +6,7 @@ import hudson.*
 import hudson.model.*
 import jenkins.model.*
 
-def gitUrl = 'git://github.com/shawnj/kuber.git
+def gitUrl = 'git://github.com/shawnj/kuber.git'
 
 job('test-job') {
     steps {
