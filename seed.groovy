@@ -38,7 +38,7 @@ void addSeedJob() {
         }
 
         triggers {
-          //githubPush()
+          githubPush()
         }
 
         steps {
@@ -49,7 +49,7 @@ void addSeedJob() {
           }
         }}
 
-        //queue('bde/pipeline-jobs')
+        queue('bde/testjob')
 
         """)
 }
