@@ -5,6 +5,8 @@ import groovy.json.JsonSlurper
 import hudson.*
 import hudson.model.*
 import jenkins.model.*
+import javaposse.jobdsl.dsl.DslScriptLoader
+import javaposse.jobdsl.plugin.JenkinsJobManagement
 
 
 //def gitUrl = 'git://github.com/shawnj/kuber.git'
@@ -12,6 +14,6 @@ println("Test Job")
 
 job('test-job') {
     steps {
-        sh('echo "hello world"')
+        shell('echo "hello world"')
     }
 }
