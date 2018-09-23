@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('one'){
             steps{
-                load 'test.groovy'
+                load 'seed.groovy'
             }
         }
     }
