@@ -22,13 +22,13 @@ void addSeedJob() {
         displayName("bde")
         description("Folder for bde.")
       }
-      job('bde/testjob') {
+      job('testjob') {
         scm {
           git('https://github.com/shawnj/kuber.git')
         }
 
         triggers {
-          githubPush()
+          //githubPush()
         }
 
         steps {
