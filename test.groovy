@@ -12,7 +12,7 @@ import javaposse.jobdsl.plugin.JenkinsJobManagement
 //def gitUrl = 'git://github.com/shawnj/kuber.git'
 println("Test Job")
 
-job('test-job') {
+freeStyleJob('test-job') {
     steps {
         shell('echo "hello world"')
     }
