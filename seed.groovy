@@ -33,11 +33,12 @@ void addSeedJob() {
 
         steps {
           dsl {
-            external "test.groovy"
+            external("test.groovy")
             ignoreExisting(true)
             removeAction('DELETE')
-        }
+          }
        }
+     }
 
         queue('bde/testjob')
 
