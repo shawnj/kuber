@@ -11,8 +11,6 @@ import groovy.json.JsonSlurper
 import javaposse.jobdsl.dsl.DslScriptLoader
 import javaposse.jobdsl.plugin.JenkinsJobManagement
 import com.microsoftopentechnologies.windowsazurestorage.*
-import hudson.maven.MavenModule
-import hubson.matrix.MatrixConfiguration
 import javaposse.jobdsl.dsl.DslScriptLoader
 import javaposse.jobdsl.plugin.JenkinsJobManagement
 
