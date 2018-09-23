@@ -8,6 +8,7 @@ import jenkins.model.*
 
 
 //def gitUrl = 'git://github.com/shawnj/kuber.git'
+println("Test Job")
 
 job('test-job') {
     steps {
