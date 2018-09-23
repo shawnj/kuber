@@ -11,8 +11,6 @@ import groovy.json.JsonSlurper
 import javaposse.jobdsl.dsl.DslScriptLoader
 import javaposse.jobdsl.plugin.JenkinsJobManagement
 import com.microsoftopentechnologies.windowsazurestorage.*
-import javaposse.jobdsl.dsl.DslScriptLoader
-import javaposse.jobdsl.plugin.JenkinsJobManagement
 
 addSeedJob()
 
@@ -38,8 +36,8 @@ void addSeedJob() {
             external "test.groovy"
             ignoreExisting(true)
             removeAction('DELETE')
-          }
-        }}
+        }
+       }
 
         queue('bde/testjob')
 
