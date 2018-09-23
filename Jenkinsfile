@@ -6,5 +6,5 @@ pipeline{
                 load 'test.groovy'
             }
         }
-    ]
+    }
 }
