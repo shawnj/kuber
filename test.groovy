@@ -15,3 +15,11 @@ import com.microsoftopentechnologies.windowsazurestorage.*
 node {
    echo 'Hello World'
 }
+
+jenkins.model.Jenkins.getInstance().getAllItems().each {
+  // MavenModule is superfluous project returned by getAllItems()
+  if (!(it instanceof hudson.maven.MavenModule || 
+        it instanceof hudson.matrix.MatrixConfiguration)) {
+      println it
+  }
+}
