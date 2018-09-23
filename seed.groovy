@@ -15,6 +15,7 @@ addSeedJob()
 void addSeedJob() {
   def workspace = new File('.')
   def jobManagement = new JenkinsJobManagement(System.out, [:], workspace)
+    println("Seed Job")
     new DslScriptLoader(jobManagement).runScript("""
       folder("bde") {
         displayName("bde")
