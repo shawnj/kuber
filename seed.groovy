@@ -26,15 +26,7 @@ void addSeedJob() {
       }
       job('bde/testjob') {
         scm {
-          label('master')
-          git {
-            remote {
-              name('remote')
-              branch("master")
-              url('https://github.com/shawnj/kuber.git')
-              credentials('none')
-            }
-          }
+          git('https://github.com/shawnj/kuber.git')
         }
 
         triggers {
