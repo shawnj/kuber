@@ -3,8 +3,7 @@ pipeline{
     stages{
         stage('one'){
             steps{
-                scm Checkout
-                load 'seed.groovy'
+                load('seed.groovy')
             }
         }
     }
