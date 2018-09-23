@@ -11,8 +11,8 @@ import groovy.json.JsonSlurper
 import javaposse.jobdsl.dsl.DslScriptLoader
 import javaposse.jobdsl.plugin.JenkinsJobManagement
 import com.microsoftopentechnologies.windowsazurestorage.*
-import hudson.maven.*
-import hubson.matrix.*
+import hudson.maven.MavenModule
+import hubson.matrix.MatrixConfiguration
 
 node {
    echo 'Hello World'
