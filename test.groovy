@@ -2,6 +2,6 @@
 println("Test Job")
 
 
-sh('echo "hello world"')
+shell('echo "hello world"')
 
 
