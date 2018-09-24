@@ -2,8 +2,10 @@
 println("Test Job")
 
 node{
-    steps{
-        shell('echo "hello world"')
+    job('testjob'){
+        steps{
+            shell('echo "hello world"')
+        }
     }
 }
 
