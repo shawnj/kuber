@@ -2,7 +2,6 @@
 println("Test Job")
 
 
-steps {
-    shell('echo "hello world"')
-}
+sh('echo "hello world"')
+
 
