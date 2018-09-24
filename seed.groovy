@@ -19,7 +19,7 @@ void addSeedJob() {
         displayName("bde")
         description("Folder for bde.")
       }
-      job('testjob') {
+      job('testjobwww') {
         scm {
           git('https://github.com/shawnj/kuber.git')
         }
