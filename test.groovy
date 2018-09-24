@@ -2,11 +2,12 @@
 println("Test Job")
 
 node{
-    freeStyleJob('testjob'){
-        steps{
+    //job('testjob'){
+    stage{
+        //steps{
             shell('echo "hello world"')
         }
-    }
+    //}
 }
 
 
