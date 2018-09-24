@@ -5,7 +5,7 @@ node{
     //job('testjob'){
     stage("one"){
         //steps{
-            shell('echo "hello world"')
+            sh('echo "hello world"')
         //}
     }
     //}
