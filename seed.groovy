@@ -1,5 +1,3 @@
-#!/usr/bin/env groovy
-
 import jenkins.model.*
 import com.cloudbees.jenkins.plugins.sshcredentials.impl.*
 import com.cloudbees.plugins.credentials.*
