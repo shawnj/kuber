@@ -4,9 +4,9 @@ println("Test Job")
 node{
     //job('testjob'){
     stage("one"){
-        steps{
+        //steps{
             shell('echo "hello world"')
-        }
+        //}
     }
     //}
 }
