@@ -16,7 +16,7 @@ pipelineJob("TestJob2") {
 
     definition {
         cps {
-            script('test.groovy')
+            script(readFileFromWorkspace('test.groovy'))
         }
     } // definition
 } 
