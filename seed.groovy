@@ -31,11 +31,12 @@ void addSeedJob() {
         }
 
         steps {
-          dsl {
-            text(readFileFromWorkspace('test.groovy'))
-            ignoreExisting(true)
-            removeAction('DELETE')
-          }
+          //dsl {
+          //  text(readFileFromWorkspace('test.groovy'))
+          //  ignoreExisting(true)
+          //  removeAction('DELETE')
+          //}
+          shell('echo Hello World')
        }
      }
 
