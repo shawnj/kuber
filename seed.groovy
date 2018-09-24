@@ -32,7 +32,7 @@ void addSeedJob() {
 
         steps {
           dsl {
-            external("test.groovy")
+            text(readFileFromWorkspace('test.groovy'))
             ignoreExisting(true)
             removeAction('DELETE')
           }
