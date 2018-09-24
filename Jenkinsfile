@@ -4,7 +4,7 @@ pipeline{
         stage('one'){
             steps{
                 script{
-                    load 'seed.groovy'
+                    load 'seed2.groovy'
                 }
             }
         }
