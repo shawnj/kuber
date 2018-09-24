@@ -3,10 +3,11 @@ println("Test Job")
 
 node{
     //job('testjob'){
-    stage{
-        //steps{
+    stage("one"){
+        steps{
             shell('echo "hello world"')
         }
+    }
     //}
 }
 
